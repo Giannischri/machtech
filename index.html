@@ -24,6 +24,9 @@
 	</head>
 	
     <body>
+	<script type="text/javascript">
+			alert("Please disable adblock");
+		</script>
         <div class="container tm-container">
             
             <div class="row navbar-row">
@@ -120,8 +123,8 @@
                             <h2 class="tm-section-header gray-text">About our company's location</h2>
                             <p class="thin-font">We currently have 2 shops on these locations below:</p>
 							<div class="list-group">
-								<a href="https://goo.gl/maps/8mqc9XhHdYtSvJbo9" class="list-group-item">225 Ave Saint-Sacrament,Quebec</a>
-								<a href="https://goo.gl/maps/emeGBVHrHdBoNEWx9" class="list-group-item">Boulevard Henri-Bourassa,Ontario<a>
+								<a id="loc1" href="https://goo.gl/maps/8mqc9XhHdYtSvJbo9" class="list-group-item" onmouseover="loc(this)" onmouseout="unlock(this)">225 Ave Saint-Sacrament,Quebec</a>
+								<a id="loc2" href="https://goo.gl/maps/emeGBVHrHdBoNEWx9" class="list-group-item" onmouseover="loc(this)" onmouseout="unlock(this)">Boulevard Henri-Bourassa,Ontario<a>
 							</div>  
 						</div>
                         
@@ -204,7 +207,7 @@
 			<script src="https://www.atlasestateagents.co.uk/javascript/tether.min.js"></script><!-- Tether for Bootstrap, http://stackoverflow.com/questions/34567939/how-to-fix-the-error-error-bootstrap-tooltips-require-tether-http-github-h --> 
 			<script src="js/bootstrap.min.js"></script>                 <!-- Bootstrap (http://v4-alpha.getbootstrap.com/) -->
 			<script src="js/jquery.singlePageNav.min.js"></script>
-			<script src="js/FileSaver.js"><script>
+			
 			<!-- Single Page Nav (https://github.com/ChrisWojcik/single-page-nav) -->
 			
 			<!-- Templatemo scripts -->
@@ -287,14 +290,18 @@
             'Email: ' + email+ ' \r\n ' + 
             'Subject: ' + sub + ' \r\n ' + 
             'Message: ' + msg;
-			
-	 var blob = new Blob([data], { type: "text/plain;charset=utf-8" });
-            saveAs(blob,"formData.txt");
 alert(data);
 
-
-
 }
+function loc(elem){
+elem.style.color="blue";
+}
+function unlock(elem){
+	elem.style.color="gray";
+}
+
+
+
 			
 			
 			</script>             
